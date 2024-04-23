@@ -33,7 +33,7 @@ impl Draw for Line {
     fn draw(&self) -> String {
         let mut str: String = String::new();
         let length: f32 = self.length();
-        for _ in 1..(length as i32) {
+        for _ in 1..=(length as i32) {
             str.push('#');
         }
         return str;
