@@ -1,7 +1,11 @@
 mod line;
-use crate::line::Line;
+mod draw;
+use crate::{draw::Draw, line::Line};
 
 fn main() {
-    let l1: Line = Line::new(3,4);
+    let l1: Line = Line::new(10,3,7,4);
     println!("Coordinates of l1: {:?}",l1.coordinates());
+    println!("{}",l1.length());
+    println!("{}",l1.draw());
+
 }
