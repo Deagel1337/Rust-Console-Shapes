@@ -27,6 +27,22 @@ impl Line {
         f32::sqrt(((i32::pow(self.x1,2) - i32::pow(self.x2,2)) as f32 )
                     +   (i32::pow(self.y2,2)-i32::pow(self.y1,2)) as f32)
     }
+
+    pub(crate) fn draw_field(&self) -> [[&str;10];10]{
+        let mut field: [[&str;10];10] = [["-";10];10];
+        for i in 0..10{
+            for j in  0..10{
+                if i == self.x1 && j == self.y1 {
+                    field[i as usize][j as usize] = "*";
+                }
+                if i == self.x2 && j == self.y2 {
+                    field[i as usize][j as usize] = "*";
+                }
+            }
+        }
+
+        return field;
+    }
 }
 
 impl Draw for Line {
